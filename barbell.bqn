@@ -1,6 +1,5 @@
-pairs ← {⟨∾"{"‿(¯4↓𝕩)‿"}",(•file.Chars 𝕩)⟩}¨{4=+´¯4↑𝕩∊".bar"}¨⊸/•file.List "."
-
-input ← •file.Chars ⊑ •args
+pairs ← {⟨∾"{"‿(¯4↓𝕩)‿"}",(•file.Chars •wdpath∾"/"∾𝕩)⟩}¨{4=+´¯4↑𝕩∊".bar"}¨⊸/•file.List •wdpath∾"/."
+input ← •file.Chars •wdpath∾"/"∾ ⊑ •args
 
 b ← "{"⍷input
 e ← »"}"⍷input

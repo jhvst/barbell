@@ -28,7 +28,7 @@
           buildInputs = with pkgs; [ makeWrapper ];
           postBuild = "wrapProgram $out/bin/${name} --prefix PATH : $out/bin";
         };
-        defaultPackage = packages.barbell;
+        packages.default = packages.barbell;
       }
     );
 }

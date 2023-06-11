@@ -5,14 +5,14 @@ b ← "|"⍷input
 e ← "|"⍷input
 
 frags ← (+`e+»b) ⊸ ⊔ input
-keys ← {0⊑𝕩}¨pairs
-vals ← {1⊑𝕩}¨pairs
-mask ← keys⊐frags
-values ← ((≠pairs)≠⊢) ⊸ / keys ⊐ frags
-reps ← (values⊏vals)⌾(((≠pairs)≠mask)⊸/) frags
+keys ← ⊑⌜pairs
+vals ← ⊑∘⌽⌜pairs
+mask ← frags∊keys
+values ← (mask / keys ⊐ frags) ⊸ ⊏ vals
+reps ← values⌾(mask⊸/) frags
 
-changed ← {⟨𝕩-1,𝕩,𝕩+1⟩}¨(({⟨1,0,1⟩≡𝕩}¨(¯3↑¨1↓↑frags ∊ reps))⊸/) ({𝕩-1}¨↕≠frags)
-neighbors ← {⟨¯1↓0⊑𝕩,1⊑𝕩,1↓2⊑𝕩⟩}¨{𝕩⊏reps}¨changed
+changed ← (⟨-1,0,1⟩+3⥊⊢)¨⊑⌽⊔mask
 nmask ← {+´𝕩⍷(∾changed)}¨↕≠frags
-•Out ∾(∾neighbors)⌾(nmask⊸/) reps
+neighbors ← ∾{⟨↕0,(1⊑𝕩)⊑reps,↕0⟩}¨changed
+•Out ∾neighbors⌾(nmask⊸/) reps
 

@@ -11,7 +11,7 @@ mask ← frags∊keys
 values ← (mask / keys ⊐ frags) ⊸ ⊏ vals
 reps ← values⌾(mask⊸/) frags
 
-changed ← (⟨-1,0,1⟩+3⥊⊢)¨⊑⌽⊔mask
+changed ← {⟨𝕩-1,𝕩,𝕩+1⟩}¨(({⟨1,0,1⟩≡𝕩}¨(¯3↑¨1↓↑frags ∊ reps))⊸/) ({𝕩-1}¨↕≠frags)
 nmask ← {+´𝕩⍷(∾changed)}¨↕≠frags
 neighbors ← ∾{⟨↕0,(1⊑𝕩)⊑reps,↕0⟩}¨changed
 •Out ∾neighbors⌾(nmask⊸/) reps

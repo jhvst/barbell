@@ -42,40 +42,18 @@
               imports = [
                 inputs.juuso.outputs.nixosModules.neovim
               ];
-              extraPackages = with pkgs; [
-                cbqn # bqnlsp assumes cbqn in path
-              ];
               extraConfigVim = ''
                 au BufRead,BufNewFile *.bqn setf bqn
                 au BufRead,BufNewFile * if getline(1) =~ '^#!.*bqn$' | setf bqn | endif
               '';
               plugins.lsp = {
                 enable = true;
-                preConfig = ''
-                  local configs = require('lspconfig.configs')
-                  local util = require('lspconfig.util')
-
-                  if not configs.bqnlsp then
-                    configs.bqnlsp = {
-                      default_config = {
-                        cmd = { 'bqnlsp' },
-                        cmd_env = {},
-                        filetypes = { 'bqn' },
-                        root_dir = util.find_git_ancestor,
-                        single_file_support = false,
-                      },
-                      docs = {
-                        description = [[ BQN Language Server ]],
-                        default_config = {
-                          root_dir = [[util.find_git_ancestor]],
-                        },
-                      },
-                    }
-                  end
-                '';
+                servers.bqnlsp = {
+                  enable = true;
+                  package = inputs.bqnlsp.packages.${system}.lsp;
+                };
               };
               extraPlugins = [
-                inputs.bqnlsp.packages.${system}.lsp
                 (pkgs.vimUtils.buildVimPluginFrom2Nix {
                   pname = "bqn-vim";
                   version = pkgs.mbqn.version;

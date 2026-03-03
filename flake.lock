@@ -7,11 +7,11 @@
       },
       "locked": {
         "dir": "packages/barbell",
-        "lastModified": 1764599173,
-        "narHash": "sha256-bDjMBURIgGmpbiRvsjEignpk+ou8BG6eckQvTvYS4As=",
+        "lastModified": 1772526796,
+        "narHash": "sha256-8dKMy7ZRoTmJKrFjWOp0L+fPyuM65B9CCrii4PoY4rI=",
         "owner": "jhvst",
         "repo": "barbell",
-        "rev": "3e52df1ee93398e5b62db9d54d091fb8d561e4f6",
+        "rev": "2a4eb80322689ced29973595e4ebe04c06ac57fb",
         "type": "github"
       },
       "original": {
@@ -26,11 +26,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1693611461,
-        "narHash": "sha256-aPODl8vAgGQ0ZYFIRisxYG5MOGSkIczvu2Cd8Gb9+1Y=",
+        "lastModified": 1772408722,
+        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "7f53fdb7bdc5bb237da7fefef12d099e4fd611ca",
+        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
         "type": "github"
       },
       "original": {
@@ -59,34 +59,32 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772526220,
-        "narHash": "sha256-a6ep9N7ut21bgeKQpo8A6Yx8A7xGXxblfCdZISY30LI=",
+        "lastModified": 1772465433,
+        "narHash": "sha256-ywy9troNEfpgh0Ee+zaV1UTgU8kYBVKtvPSxh6clYGU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "51153c6a9e9017b16054d2605908efbf9e8b1ce5",
+        "rev": "c581273b8d5bdf1c6ce7e0a54da9841e6a763913",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixos-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs-lib": {
       "locked": {
-        "dir": "lib",
-        "lastModified": 1693471703,
-        "narHash": "sha256-0l03ZBL8P1P6z8MaSDS/MvuU8E75rVxe5eE1N6gxeTo=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "3e52e76b70d5508f3cec70b882a29199f4d1ee85",
+        "lastModified": 1772328832,
+        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
         "type": "github"
       },
       "original": {
-        "dir": "lib",
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
         "type": "github"
       }
     },
